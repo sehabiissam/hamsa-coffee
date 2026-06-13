@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-cream: #F9F7F2;
+    --color-beige: #E8E2D6;
+    --color-sand: rgba(61, 43, 31, 0.1);
+    --color-sand-dark: #C5A059;
+    --color-espresso: #3D2B1F;
+    --color-charcoal: #1A1A1A;
+    --color-gold: #C5A059;
+    --color-gold-light: #F0E9DC;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-espresso);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-cream: #F9F7F2;
+  --color-beige: #E8E2D6;
+  --color-sand: rgba(61, 43, 31, 0.1);
+  --color-sand-dark: #C5A059;
+  --color-espresso: #3D2B1F;
+  --color-charcoal: #1A1A1A;
+  --color-gold: #C5A059;
+  --color-gold-muted: #9C7C3C;
+  --color-gold-light: #F0E9DC;
+}
+
+/* Custom scrollbar to keep layout premium */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FDFBF7;
+}
+::-webkit-scrollbar-thumb {
+  background: #C6AC8F;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2C1A11;
+}
+
+/* Smooth motion elements */
+.smooth-transition {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Soft gold glow */
+.gold-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+.gold-border {
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+/* Infinite Marquee Scrolling */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
