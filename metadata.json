@@ -1,0 +1,6 @@
+{
+  "name": "Hamsa Coffee & Brunch",
+  "description": "A premium Algerian coffee and brunch destination, blending North African heritage with contemporary minimalist luxury.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
