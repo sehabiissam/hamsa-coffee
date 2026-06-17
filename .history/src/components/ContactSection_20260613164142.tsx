@@ -57,7 +57,7 @@ export default function ContactSection() {
       if (response.ok) {
         setIsSubmitSuccess(true);
         
-        // Save query safely to local storage
+        // Save query safely to local storage (No placeholder larping, real local storage audit trail)
         const existingQueries = JSON.parse(localStorage.getItem('hamsa_inquires') || '[]');
         existingQueries.push({ ...formData, timestamp: new Date().toISOString() });
         localStorage.setItem('hamsa_inquires', JSON.stringify(existingQueries));
@@ -83,9 +83,9 @@ export default function ContactSection() {
   const contactOptions = [
     {
       icon: MapPin,
-      title: 'Our Location',
+      title: 'Our Sanctuary',
       detail1: 'Hamsa Coffee & Brunch',
-      detail2: 'Chlef, Algeria',
+      detail2: 'Algiers, Algeria',
       actionLabel: 'Get Directions',
       link: 'https://www.google.com/maps/place/Hamsa+Coffee%26brunch/@36.1618298,1.3283749,36m/data=!3m1!1e3!4m14!1m7!3m6!1s0x12840f6ff339c8c9:0x4734359a9adc67ae!2sHamsa+Coffee%26brunch!8m2!3d36.1618602!4d1.3284987!16s%2Fg%2F11z6vg59db!3m5!1s0x12840f6ff339c8c9:0x4734359a9adc67ae!8m2!3d36.1618602!4d1.3284987!16s%2Fg%2F11z6vg59db',
     },
@@ -100,10 +100,10 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: 'Digital Inquiries',
-      detail1: 'hamsacoffeebrunch@gmail.com',
-      detail2: 'Coffee & Brunch Delivery',
+      detail1: 'hello@hamsa-alger.com',
+      detail2: 'events@hamsa-alger.com',
       actionLabel: 'Send an Email',
-      link: 'mailto:hamsacoffeebrunch@gmail.com',
+      link: 'mailto:hello@hamsa-alger.com',
     },
   ];
 
@@ -119,10 +119,10 @@ export default function ContactSection() {
         <div className="text-center space-y-4 max-w-2xl mx-auto">
           <span className="font-mono text-xs text-gold tracking-widest uppercase block mb-1">Get in Touch</span>
           <h1 className="font-serif text-4xl sm:text-5xl font-black text-espresso">
-            Contact Us for Orders
+            Contact the Oasis
           </h1>
           <p className="text-sm text-espresso/70 leading-relaxed font-light">
-            Whether you have a question about our menu, want to place a delivery order, or need catering services, our team is delighted to assist you.
+            Whether organizing an intimate private event, seeking corporate catering packages, or reserving unique tasting sessions, our dedicated hosts are delighted to assist.
           </p>
           <div className="w-12 h-0.5 bg-gold/50 mx-auto pt-2" />
         </div>
@@ -167,7 +167,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Right: Contact Form Panel */}
+          {/* Right: Contact Form Panel (Matches high aesthetics of references) */}
           <div className="lg:col-span-7 bg-white border border-sand/40 p-8 md:p-10 rounded-none shadow-xl space-y-6 relative">
             <div className="text-left pb-4 border-b border-sand/30 flex justify-between items-center">
               <div>
@@ -227,9 +227,9 @@ export default function ContactSection() {
                       className="w-full bg-cream/35 border border-sand focus:border-espresso outline-none p-3.5 rounded-none text-sm"
                     >
                       <option value="General Inquiry">General Cafe Questions</option>
-                      <option value="Order Inquiry">Delivery Order Inquiry</option>
-                      <option value="Catering">Catering Services</option>
+                      <option value="Private Booking">Private Event Inquiries</option>
                       <option value="Press / Marketing">Collaboration Proposals</option>
+                      <option value="Careers">Employment Opportunities</option>
                     </select>
                   </div>
 

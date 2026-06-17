@@ -73,6 +73,8 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
               {/* Specialized Page Banner */}
@@ -103,10 +105,10 @@ export default function App() {
                   
                   <div className="pt-4">
                     <button
-                      onClick={() => triggerOrder()}
+                      onClick={() => triggerReservation('oasis_tasting')}
                       className="px-8 py-3.5 bg-espresso hover:bg-gold text-cream hover:text-espresso font-mono text-xs tracking-widest uppercase rounded-full smooth-transition border border-espresso"
                     >
-                      Order Our Coffee
+                      Book Free Roastery Tour
                     </button>
                   </div>
                 </div>
@@ -126,7 +128,7 @@ export default function App() {
               <div className="pt-24">
                 <MenuSection
                   featuredOnly={false}
-                  onOpenOrder={triggerOrder}
+                  onOpenReservation={triggerReservation}
                 />
               </div>
             </motion.div>
@@ -171,13 +173,14 @@ export default function App() {
       <MobileDock
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-        onOpenOrder={() => triggerOrder()}
+        onOpenReservation={() => triggerReservation('standard')}
       />
 
-      {/* 5. Order Modal Overlay popups */}
-      <OrderModal
-        isOpen={orderOpen}
-        onClose={() => setOrderOpen(false)}
+      {/* 5. Gilded Table booking Overlay popups */}
+      <ReservationModal
+        isOpen={reservationOpen}
+        onClose={() => setReservationOpen(false)}
+        initialExperience={experienceSelection}
       />
 
     </div>

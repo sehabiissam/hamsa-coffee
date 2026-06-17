@@ -33,19 +33,12 @@ export interface Testimonial {
   rating: number;
 }
 
-export interface OrderFormData {
+export interface Order {
   name: string;
   phone: string;
   email: string;
-  selectedItems: string[];
+  selectedItems: { id: string; name: string; quantity: number }[];
   quantity: number;
-  address: string;
-  notes: string;
-}
-
-export interface OrderItem {
-  id: string;
-  name: string;
-  category: string;
-  price: string;
+  deliveryAddress: string;
+  notes?: string;
 }

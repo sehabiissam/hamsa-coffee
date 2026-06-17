@@ -5,15 +5,15 @@
 
 import { Page } from '../types';
 import { IMAGE_CAFE_INTERIOR, IMAGE_HAMSA_LOGO } from '../data';
-import { ArrowRight, Sparkles, MapPin, ShoppingBag } from 'lucide-react';
+import { ArrowRight, Sparkles, MapPin, Calendar } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface HeroProps {
   setCurrentPage: (page: Page) => void;
-  onOpenOrder: () => void;
+  onOpenReservation: () => void;
 }
 
-export default function Hero({ setCurrentPage, onOpenOrder }: HeroProps) {
+export default function Hero({ setCurrentPage, onOpenReservation }: HeroProps) {
   return (
     <section className="relative min-h-[92vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-cream pt-20">
       {/* Background Decorative Arches & Gradients */}
@@ -47,8 +47,9 @@ export default function Hero({ setCurrentPage, onOpenOrder }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="font-serif text-4xl sm:text-6xl lg:text-[76px] text-espresso font-black tracking-tighter leading-[0.88]"
             >
-              Coffee, Brunch &<br />
-              <span className="text-espresso/30">Delivery</span> to Your Door
+              Where Coffee,<br />
+              Brunch &<br />
+              <span className="text-espresso/30">Community</span> Meet
             </motion.h1>
 
             <motion.p
@@ -57,7 +58,7 @@ export default function Hero({ setCurrentPage, onOpenOrder }: HeroProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-espresso/70 text-sm max-w-md leading-relaxed font-light"
             >
-              Experience the premium fusion of traditional Algerian warmth and modern brunch excellence. Order online and enjoy our craft coffee and artisan dishes from the comfort of your home.
+              Experience the premium fusion of traditional Algerian warmth and modern brunch excellence. A sanctuary crafted for those who appreciate the finer notes of life and coffee.
             </motion.p>
           </div>
 
@@ -75,15 +76,15 @@ export default function Hero({ setCurrentPage, onOpenOrder }: HeroProps) {
               }}
               className="px-10 py-4 bg-espresso hover:bg-espresso/90 text-cream text-xs uppercase tracking-widest font-bold rounded-none smooth-transition flex items-center gap-2 group cursor-pointer border border-espresso"
             >
-              View Menu & Order
+              Explore Menu 
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
             </button>
 
             <button
-              onClick={onOpenOrder}
+              onClick={onOpenReservation}
               className="px-10 py-4 border border-espresso/20 hover:border-espresso text-espresso text-xs uppercase tracking-widest font-bold rounded-none smooth-transition flex items-center gap-2 cursor-pointer bg-transparent"
             >
-              Order Now
+              Our Story
             </button>
           </motion.div>
 
@@ -97,21 +98,21 @@ export default function Hero({ setCurrentPage, onOpenOrder }: HeroProps) {
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-gold-muted flex-shrink-0" />
               <div className="text-xs">
-                <span className="font-semibold block text-espresso">Hamsa Coffee & Brunch</span>
-                <span className="text-espresso/60">Chlef, Algeria</span>
+                <span className="font-semibold block text-espresso">128 Rue d&apos;Alger</span>
+                <span className="text-espresso/60">Modern District, Algiers</span>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <ShoppingBag className="w-4 h-4 text-gold-muted flex-shrink-0" />
+              <Calendar className="w-4 h-4 text-gold-muted flex-shrink-0" />
               <div className="text-xs">
-                <span className="font-semibold block text-espresso">Delivery Available</span>
-                <span className="text-espresso/60">Order Online Today</span>
+                <span className="font-semibold block text-espresso">Daily Hours</span>
+                <span className="text-espresso/60">08:00 AM – 10:00 PM</span>
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Right Grid: Double Image Layout */}
+        {/* Right Grid: Double Image Layout (inspired directly by the reference templates) */}
         <div className="lg:col-span-5 order-1 lg:order-2 relative flex items-center justify-center">
           
           {/* Main big elegant circle visual medallion */}
@@ -124,7 +125,7 @@ export default function Hero({ setCurrentPage, onOpenOrder }: HeroProps) {
             {/* The circular brand watermark background */}
             <div className="absolute inset-10 rounded-full border border-dashed border-sand-dark/10 animate-spin-slow pointer-events-none" />
             
-            {/* Embedded Luxury Cafe Image inside the circle */}
+            {/* Embedded Luxury Cafe Image inside the circle with custom scaling */}
             <motion.div 
               initial={{ scale: 1.1, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -133,7 +134,7 @@ export default function Hero({ setCurrentPage, onOpenOrder }: HeroProps) {
             >
               <img
                 src={IMAGE_CAFE_INTERIOR}
-                alt="Hamsa Coffee and Brunch luxury interior design in Chlef"
+                alt="Hamsa Coffee and Brunch luxury interior design in Algiers"
                 className="w-full h-full object-cover select-none brightness-95"
                 referrerPolicy="no-referrer"
               />
@@ -143,11 +144,11 @@ export default function Hero({ setCurrentPage, onOpenOrder }: HeroProps) {
 
             {/* floating seal label */}
             <div className="absolute bottom-12 bg-cream text-espresso text-[11px] font-mono tracking-widest font-semibold px-4 py-1.5 rounded-full border border-sand shadow-sm z-10 text-center">
-              CHLEF, ALGERIA
+              ALGIERS, ALGERIA
             </div>
           </motion.div>
 
-          {/* Hovering circular logo icon */}
+          {/* Hovering circular logo icon that references the brand */}
           <motion.div
             initial={{ opacity: 0, x: 20, y: -20 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
@@ -172,7 +173,7 @@ export default function Hero({ setCurrentPage, onOpenOrder }: HeroProps) {
           <span className="text-gold">•</span>
           <span>Authentic Brunch</span>
           <span className="text-gold">•</span>
-          <span>Delivery Available</span>
+          <span>Creative Space</span>
           <span className="text-gold">•</span>
           <span>Algerian Hospitality</span>
           <span className="text-gold">•</span>
@@ -180,14 +181,14 @@ export default function Hero({ setCurrentPage, onOpenOrder }: HeroProps) {
           <span className="text-gold">•</span>
           <span>Artisanal Pastries</span>
           <span className="text-gold">•</span>
-          <span>Order Online</span>
+          <span>Hamsa Coffee</span>
           <span className="text-gold">•</span>
           {/* Duplicate for infinite loop */}
           <span>Coffee Selection</span>
           <span className="text-gold">•</span>
           <span>Authentic Brunch</span>
           <span className="text-gold">•</span>
-          <span>Delivery Available</span>
+          <span>Creative Space</span>
           <span className="text-gold">•</span>
           <span>Algerian Hospitality</span>
           <span className="text-gold">•</span>
@@ -195,7 +196,7 @@ export default function Hero({ setCurrentPage, onOpenOrder }: HeroProps) {
           <span className="text-gold">•</span>
           <span>Artisanal Pastries</span>
           <span className="text-gold">•</span>
-          <span>Order Online</span>
+          <span>Hamsa Coffee</span>
           <span className="text-gold">•</span>
         </div>
       </div>

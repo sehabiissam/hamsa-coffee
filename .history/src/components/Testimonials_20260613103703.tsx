@@ -101,7 +101,8 @@ export default function Testimonials() {
                 <div className="flex gap-3">
                   <MapPin className="w-4 h-4 text-gold-muted mt-0.5 flex-shrink-0" />
                   <p className="text-sm font-semibold text-espresso">
-                    Chlef, Algeria
+                    12 Rue Didouche Mourad, <br />
+                    Algiers, 16000, Algeria
                   </p>
                 </div>
               </div>
@@ -121,7 +122,7 @@ export default function Testimonials() {
                 <span className="font-mono text-[10px] text-gold tracking-widest uppercase block mb-1">Inquiries & Catering</span>
                 <div className="flex gap-3">
                   <Mail className="w-4 h-4 text-gold-muted mt-0.5 flex-shrink-0" />
-                  <span className="text-sm font-mono text-espresso/80">hamsacoffeebrunch@gmail.com</span>
+                  <span className="text-sm font-mono text-espresso/80">hello@hamsa-alger.com</span>
                 </div>
               </div>
             </div>

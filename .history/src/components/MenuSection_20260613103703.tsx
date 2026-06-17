@@ -5,18 +5,18 @@
 
 import { useState } from 'react';
 import { MENU_ITEMS, IMAGE_POUROVER_COFFEE } from '../data';
-import { Sparkles, ShoppingBag, Coffee, Utensils, UtensilsCrossed, ArrowRight } from 'lucide-react';
+import { Sparkles, Calendar, Coffee, Utensils, UtensilsCrossed, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface MenuSectionProps {
   featuredOnly?: boolean;
-  onOpenOrder: () => void;
+  onOpenReservation: (experience?: 'standard' | 'high_tea' | 'oasis_tasting') => void;
   onNavigateToMenu?: () => void;
 }
 
 export default function MenuSection({
   featuredOnly = false,
-  onOpenOrder,
+  onOpenReservation,
   onNavigateToMenu,
 }: MenuSectionProps) {
   const [activeCategory, setActiveCategory] = useState<'coffee' | 'brunch' | 'dessert'>('coffee');
@@ -103,15 +103,17 @@ export default function MenuSection({
               ))}
             </div>
 
-            {/* Order Now CTA for Homepage */}
-            <div className="text-center pt-6">
-              <button
-                onClick={onNavigateToMenu || onOpenOrder}
-                className="px-8 py-3.5 bg-transparent hover:bg-espresso text-espresso hover:text-cream border border-espresso font-mono text-xs tracking-widest uppercase rounded-none smooth-transition inline-flex items-center gap-2 group cursor-pointer"
-              >
-                View Full Menu & Order <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
-              </button>
-            </div>
+            {/* View Full Menu CTA for Homepage */}
+            {onNavigateToMenu && (
+              <div className="text-center pt-6">
+                <button
+                  onClick={onNavigateToMenu}
+                  className="px-8 py-3.5 bg-transparent hover:bg-espresso text-espresso hover:text-cream border border-espresso font-mono text-xs tracking-widest uppercase rounded-none smooth-transition inline-flex items-center gap-2 group cursor-pointer"
+                >
+                  View Full Seasonal Menu <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+                </button>
+              </div>
+            )}
           </div>
         ) : (
           /* ==========================================
@@ -155,7 +157,7 @@ export default function MenuSection({
               })}
             </div>
 
-            {/* Category Split Showcases */}
+            {/* Category Split Showcases (Directly following layouts of reference image 2) */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeCategory}
@@ -178,7 +180,7 @@ export default function MenuSection({
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-espresso/40 via-transparent to-transparent pointer-events-none" />
                       <div className="absolute bottom-6 left-6 text-left">
-                        <span className="font-mono text-[10px] tracking-widest uppercase text-gold">Roasted in Chlef</span>
+                        <span className="font-mono text-[10px] tracking-widest uppercase text-gold">Roasted in Algiers</span>
                         <h4 className="font-serif text-lg text-white font-semibold">100% Certified Arabica</h4>
                       </div>
                     </div>
@@ -239,7 +241,7 @@ export default function MenuSection({
                         ))}
                       </div>
 
-                      {/* Right: The Special Tasting Box */}
+                      {/* Right: The Special Tasting Box (Matches Reference Image 2 style exactly) */}
                       <div className="bg-espresso text-cream p-8 rounded-none border border-sand/15 flex flex-col justify-between hover:shadow-lg relative overflow-hidden h-full">
                         {/* Decorative plate vector watermark */}
                         <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-cream/[0.02] border border-dashed border-gold/10 rounded-full pointer-events-none" />
@@ -259,16 +261,16 @@ export default function MenuSection({
 
                         <div className="pt-8 relative z-10">
                           <button
-                            onClick={onOpenOrder}
+                            onClick={() => onOpenReservation('oasis_tasting')}
                             className="w-full py-3 bg-gold text-espresso hover:bg-cream hover:text-espresso font-mono text-xs tracking-widest uppercase font-black rounded-none smooth-transition hover:shadow-md cursor-pointer"
                           >
-                            Order Now
+                            Reserve Tasting Seat
                           </button>
                         </div>
                       </div>
                     </div>
 
-                    {/* Remaining items listed in simple grids */}
+                    {/* Remaining hotcakes/brunch listed in simple grids */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left pt-4">
                       {filteredItems.slice(2).map(item => (
                         <div key={item.id} className="p-6 bg-white border border-sand/30 rounded-none">
@@ -336,28 +338,28 @@ export default function MenuSection({
               </motion.div>
             </AnimatePresence>
 
-            {/* Ready to Order Block */}
+            {/* Ready to experience the Oasis Block (Matches the gorgeous peach/sand wide box from reference 2 bottom) */}
             <div className="bg-beige/40 rounded-none p-8 md:p-12 border border-sand text-center space-y-6 max-w-4xl mx-auto pt-8">
-              <span className="font-mono text-xs text-gold tracking-widest uppercase font-semibold">Order Now for Delivery</span>
+              <span className="font-mono text-xs text-gold tracking-widest uppercase font-semibold">Specialty Booking Selection</span>
               <h3 className="font-serif text-3xl text-espresso font-black">
-                Ready to Place Your Order?
+                Ready to experience the Oasis?
               </h3>
               <p className="text-sm text-espresso/70 max-w-xl mx-auto font-light leading-relaxed">
-                Enjoy the premium taste of Hamsa Coffee & Brunch from the comfort of your home. Browse our menu and place your order for delivery.
+                Join us for an uplifting journey of rich taste, fragrant spice, and quiet tranquility. Walk-ins are always welcomed warmly, but securing a digital reservation ensures your customized place in our coffee sanctuary.
               </p>
               
               <div className="pt-2 flex flex-wrap justify-center gap-4">
                 <button
-                  onClick={onOpenOrder}
+                  onClick={() => onOpenReservation('standard')}
                   className="px-8 py-3.5 bg-espresso hover:bg-charcoal text-cream text-xs font-mono font-bold tracking-widest uppercase rounded-none smooth-transition hover:shadow-lg cursor-pointer"
                 >
-                  Place Your Order
+                  Book A Standard Table
                 </button>
                 <button
-                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  onClick={() => onOpenReservation('high_tea')}
                   className="px-8 py-3.5 bg-transparent hover:bg-sand/30 text-espresso border border-sand-dark/40 hover:border-espresso text-xs font-mono font-semibold tracking-widest uppercase rounded-none smooth-transition cursor-pointer"
                 >
-                  Browse Full Menu
+                  Order High Tea Package
                 </button>
               </div>
             </div>

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { MenuItem, GalleryImage, Testimonial, OrderItem } from './types';
+import { MenuItem, GalleryImage, Testimonial } from './types';
 import IMAGE_POUROVER_COFFEE from './assets/images/pourover_coffee_1781254946751.jpg';
 import IMAGE_SHAKSHUKA from './assets/images/heritage_shakshuka_1781254962214.jpg';
 import IMAGE_HONEY_CAKE from './assets/images/medjourah_honey_cake_1781254977691.jpg';
@@ -175,30 +175,6 @@ export const MENU_ITEMS: MenuItem[] = [
   }
 ];
 
-export const ORDER_MENU_ITEMS: { name: string; category: string }[] = [
-  // Coffee
-  { name: 'Espresso', category: 'Coffee' },
-  { name: 'Americano', category: 'Coffee' },
-  { name: 'Cappuccino', category: 'Coffee' },
-  { name: 'Latte', category: 'Coffee' },
-  { name: 'Mocha', category: 'Coffee' },
-  { name: 'Flat White', category: 'Coffee' },
-  // Cold Drinks
-  { name: 'Iced Latte', category: 'Cold Drinks' },
-  { name: 'Iced Americano', category: 'Cold Drinks' },
-  { name: 'Frappuccino', category: 'Cold Drinks' },
-  // Brunch
-  { name: 'Avocado Toast', category: 'Brunch' },
-  { name: 'Omelette', category: 'Brunch' },
-  { name: 'Pancakes', category: 'Brunch' },
-  { name: 'French Toast', category: 'Brunch' },
-  { name: 'Breakfast Sandwich', category: 'Brunch' },
-  // Desserts
-  { name: 'Cheesecake', category: 'Desserts' },
-  { name: 'Brownie', category: 'Desserts' },
-  { name: 'Croissant', category: 'Desserts' },
-];
-
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
     id: 'g1',
@@ -263,7 +239,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 't1',
     name: 'Lina Benyahia',
     role: 'Interior Architect',
-    content: 'The most beautiful space in the city. Hamsa isn\'t just a specialty coffee shop; it\'s a feeling of home and high-end serenity combined. Their attention to Mediterranean acoustics is outstanding.',
+    content: 'The most beautiful space in the city. Hamsa isn’t just a specialty coffee shop; it’s a feeling of home and high-end serenity combined. Their attention to Mediterranean acoustics is outstanding.',
     rating: 5
   },
   {

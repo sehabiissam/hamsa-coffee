@@ -76,7 +76,7 @@ export default function About({ onReadStory, compact = false }: AboutProps) {
               In the heart of Algerian culture, the <span className="font-semibold text-espresso">Hamsa</span> is more than a visual icon—it is a sacred gesture of protection, hospitality, energetic warmth, and soulful community. At Hamsa Coffee & Brunch, we carry this timeless legacy into the modern era with quiet contemporary design and meticulous craft.
             </p>
             <p>
-              Our sanctuary was founded in Chlef upon the singular belief that a simple cup of coffee goes beyond raw caffeine—it is an authentic ritual of connection and peace. We ethically source organic, single-origin Arabica beans from small holdings, slow-roasting them to perfection and pairing each cup with culinary plates that celebrate both Mediterranean freshness and warm Saharan spices.
+              Our sanctuary was founded in Algiers upon the singular belief that a simple cup of coffee goes beyond raw caffeine—it is an authentic ritual of connection and peace. We ethically source organic, single-origin Arabica beans from small holdings, slow-roasting them to perfection and pairing each cup with culinary plates that celebrate both Mediterranean freshness and warm Saharan spices.
             </p>
             <p>
               Step inside our sun-drenched arches, and discover an environment built for slow living, intentional sensory delight, and the timeless art of genuine gathering.

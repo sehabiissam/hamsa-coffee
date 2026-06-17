@@ -44,7 +44,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
               <span className="font-serif text-3xl font-black text-white tracking-[0.25em]">HAMSA</span>
             </div>
             <p className="text-cream/60 text-xs md:text-sm font-light leading-relaxed">
-              An Oasis of Modernity, blending authentic Algerian heritage with peaceful contemporary lifestyle. Discover our specialty coffee slow roasts, fresh brunch ingredients, and creative gathering community. Order online for delivery.
+              An Oasis of Modernity, blending authentic Algerian heritage with peaceful contemporary lifestyle in the heart of Algiers. Discover our specialty coffee slow roasts, fresh brunch ingredients, and creative gathering community.
             </p>
             
             {/* Social links */}
@@ -68,7 +68,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
                 <Music2 className="w-4 h-4" />
               </a>
               <a
-                href="mailto:hamsacoffeebrunch@gmail.com"
+                href="mailto:hello@hamsa-alger.com"
                 className="w-10 h-10 rounded-full border border-sand/15 hover:border-gold hover:bg-gold hover:text-espresso flex items-center justify-center smooth-transition text-cream/70"
                 aria-label="Email Hamsa cafe team"
               >
@@ -101,19 +101,11 @@ export default function Footer({ setCurrentPage }: FooterProps) {
 
           {/* Location info */}
           <div className="space-y-4 text-xs">
-            <h4 className="font-mono text-[10px] text-gold tracking-widest uppercase font-semibold">Order & Visit</h4>
+            <h4 className="font-mono text-[10px] text-gold tracking-widest uppercase font-semibold">Visit Us</h4>
             <address className="not-italic space-y-3 font-light text-cream/70 leading-relaxed">
               <p>
                 <span className="font-semibold block text-white/90">Hamsa Coffee & Brunch:</span>
-                Chlef, Algeria
-              </p>
-              <p>
-                <span className="font-semibold block text-white/90">Call for Orders:</span>
-                <a href="tel:0542734809" className="hover:text-gold smooth-transition">0542734809</a>
-              </p>
-              <p>
-                <span className="font-semibold block text-white/90">Email:</span>
-                <a href="mailto:hamsacoffeebrunch@gmail.com" className="hover:text-gold smooth-transition">hamsacoffeebrunch@gmail.com</a>
+                Algiers, Algeria
               </p>
               <p>
                 <span className="font-semibold block text-white/90">Daily Opening:</span>
@@ -128,7 +120,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
         {/* Bottom index bar */}
         <div className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row justify-between items-center gap-6 text-xs text-cream/50 font-light">
           <div>
-            <span>&copy; 2026 Hamsa Coffee & Brunch. Coffee & Brunch Delivery. All Rights Reserved.</span>
+            <span>&copy; 2026 Hamsa Coffee &amp; Brunch. An Oasis of Modernity. All Rights Reserved.</span>
           </div>
 
           <div className="flex gap-6">

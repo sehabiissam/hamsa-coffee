@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Coffee, ShoppingBag, PhoneCall } from 'lucide-react';
+import { Menu, X, Coffee, Calendar, PhoneCall } from 'lucide-react';
 import { Page } from '../types';
 import { IMAGE_HAMSA_LOGO } from '../data';
 import { motion, AnimatePresence } from 'motion/react';
@@ -12,10 +12,10 @@ import { motion, AnimatePresence } from 'motion/react';
 interface NavbarProps {
   currentPage: Page;
   setCurrentPage: (page: Page) => void;
-  onOpenOrder: () => void;
+  onOpenReservation: () => void;
 }
 
-export default function Navbar({ currentPage, setCurrentPage, onOpenOrder }: NavbarProps) {
+export default function Navbar({ currentPage, setCurrentPage, onOpenReservation }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -97,21 +97,21 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenOrder }: Nav
         {/* DESKTOP CTA BUTTON */}
         <div className="hidden md:flex items-center gap-4">
           <button
-            onClick={onOpenOrder}
+            onClick={onOpenReservation}
             className="px-6 py-2 border border-espresso text-[10px] uppercase tracking-widest font-bold hover:bg-espresso hover:text-white transition-all duration-300 cursor-pointer"
           >
-            Order Online
+            Visit Us
           </button>
         </div>
 
         {/* MOBILE HAMBURGER BUTTON */}
         <div className="md:hidden flex items-center gap-3">
           <button
-            onClick={onOpenOrder}
+            onClick={onOpenReservation}
             className="p-2 border border-sand hover:bg-beige/40 rounded-full text-espresso cursor-pointer"
-            aria-label="Quick order"
+            aria-label="Quick reserve"
           >
-            <ShoppingBag className="w-4 h-4 text-gold-muted" />
+            <Calendar className="w-4 h-4 text-gold-muted" />
           </button>
           
           <button
@@ -124,7 +124,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenOrder }: Nav
         </div>
       </div>
 
-      {/* MOBILE DROPDOWN MENU */}
+      {/* MOBILE DROPDOWN MENU (Contained elegantly under the header instead of a floating right-side drawer) */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -167,11 +167,11 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenOrder }: Nav
               <button
                 onClick={() => {
                   setIsOpen(false);
-                  onOpenOrder();
+                  onOpenReservation();
                 }}
                 className="w-full py-3 bg-espresso hover:bg-charcoal px-6 text-cream rounded-none font-semibold uppercase text-xs font-mono tracking-widest text-center smooth-transition flex items-center justify-center gap-2 cursor-pointer"
               >
-                <ShoppingBag className="w-4 h-4" /> Order Online
+                <Calendar className="w-4 h-4" /> Book a Table
               </button>
             </div>
           </motion.div>

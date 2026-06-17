@@ -33,19 +33,13 @@ export interface Testimonial {
   rating: number;
 }
 
-export interface OrderFormData {
+export interface Reservation {
   name: string;
-  phone: string;
   email: string;
-  selectedItems: string[];
-  quantity: number;
-  address: string;
-  notes: string;
-}
-
-export interface OrderItem {
-  id: string;
-  name: string;
-  category: string;
-  price: string;
+  phone: string;
+  date: string;
+  time: string;
+  guests: number;
+  experience: 'standard' | 'high_tea' | 'oasis_tasting';
+  notes?: string;
 }
